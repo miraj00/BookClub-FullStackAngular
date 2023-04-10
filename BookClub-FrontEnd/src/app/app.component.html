@@ -1,0 +1,19 @@
+<div *ngFor="let m of members; index as i">
+  <p>Name: {{m.name}}</p>
+  <p>Books Read: {{m.booksRead}} <button (click)="readBook(i)">Read a Book</button></p>
+  <p>Founding Member: {{m.foundingMember}}</p>
+  <button (click)="deleteMember(m.id)">Kick out {{m.name}}</button>
+  <br/> <br/>
+</div>
+
+
+<h2>Add New Member to the Book club</h2>
+<label>Name</label>
+<input name="name" type="text" [(ngModel)]="newMember.name" />
+
+<label>Books Read</label>
+<input name="booksRead" type="number" [(ngModel)]="newMember.booksRead"/>
+
+<label>Found Member</label>
+<input name="foundingMember" type="checkbox" [(ngModel)]="newMember.foundingMember"/>
+<button (click)="addNewMember()">Add new Member</button>
